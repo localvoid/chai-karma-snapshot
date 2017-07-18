@@ -2,8 +2,6 @@
 
 ## Usage Example
 
-## Usage Example with Mocha and Chai
-
 ```sh
 $ npm install karma karma-webpack karma-sourcemap-loader karma-snapshot karma-mocha \
               karma-mocha-snapshot mocha chai chai-karma-snapshot --save-dev
