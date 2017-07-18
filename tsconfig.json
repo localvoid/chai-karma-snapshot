@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "dist/js",
+    "declarationDir": "dist/typings",
+    "declaration": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "lib": [
+      "es2016",
+      "es2015",
+      "dom"
+    ],
+    "types": [
+      "mocha"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}

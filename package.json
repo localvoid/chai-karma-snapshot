@@ -1,0 +1,39 @@
+{
+  "name": "chai-karma-snapshot",
+  "version": "0.1.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/js/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "description": "Chai plugin for snapshot testing in Karma.",
+  "license": "MIT",
+  "author": {
+    "name": "Boris Kaul",
+    "email": "localvoid@gmail.com",
+    "url": "https://github.com/localvoid"
+  },
+  "keywords": [
+    "chai-plugin",
+    "karma",
+    "snapshot"
+  ],
+  "homepage": "https://github.com/localvoid/chai-snapshot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/localvoid/chai-snapshot"
+  },
+  "bugs": {
+    "url": "https://github.com/localvoid/chai-snapshot/issues"
+  },
+  "github": "https://github.com/localvoid/chai-snapshot",
+  "scripts": {
+    "dist": "npm run dist:es6 && npm run dist:cjs",
+    "dist:es6": "tsc -p ./tsconfig.json",
+    "dist:cjs": "tsc -p ./tsconfig.cjs.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
+  }
+}
