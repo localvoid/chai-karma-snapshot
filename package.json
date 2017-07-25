@@ -1,6 +1,6 @@
 {
   "name": "chai-karma-snapshot",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/cjs/index.js",
   "module": "dist/js/index.js",
   "typings": "dist/typings/index.d.ts",
@@ -25,6 +25,12 @@
     "url": "https://github.com/localvoid/chai-karma-snapshot/issues"
   },
   "github": "https://github.com/localvoid/chai-karma-snapshot",
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "prepublish": "npm run dist",
     "dist": "npm run dist:es6 && npm run dist:cjs",
