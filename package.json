@@ -16,15 +16,15 @@
     "karma",
     "snapshot"
   ],
-  "homepage": "https://github.com/localvoid/chai-snapshot",
+  "homepage": "https://github.com/localvoid/chai-karma-snapshot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/localvoid/chai-snapshot"
+    "url": "https://github.com/localvoid/chai-karma-snapshot"
   },
   "bugs": {
-    "url": "https://github.com/localvoid/chai-snapshot/issues"
+    "url": "https://github.com/localvoid/chai-karma-snapshot/issues"
   },
-  "github": "https://github.com/localvoid/chai-snapshot",
+  "github": "https://github.com/localvoid/chai-karma-snapshot",
   "scripts": {
     "dist": "npm run dist:es6 && npm run dist:cjs",
     "dist:es6": "tsc -p ./tsconfig.json",
