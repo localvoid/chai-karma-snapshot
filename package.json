@@ -1,6 +1,6 @@
 {
   "name": "chai-karma-snapshot",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/js/index.js",
   "typings": "dist/typings/index.d.ts",
@@ -38,11 +38,11 @@
     "dist:cjs": "tsc -p ./tsconfig.cjs.json"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0"
+    "babel-runtime": "^6.23.0",
+    "pretty-format": "^20.0.3"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.41",
-    "pretty-format": "^20.0.3",
     "tslint": "^5.5.0",
     "typescript": "^2.4.1"
   }

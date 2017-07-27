@@ -1,5 +1,9 @@
 # Chai Plugin for Snapshot Testing with Karma
 
+## Snapshot Serialization
+
+This plugin is using the same [serialization module](https://www.npmjs.com/package/pretty-format) that is used in [Jest](http://facebook.github.io/jest/) library.
+
 ## Usage Example
 
 ```sh
