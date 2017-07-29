@@ -1,6 +1,6 @@
 {
   "name": "chai-karma-snapshot",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/cjs/index.js",
   "module": "dist/js/index.js",
   "typings": "dist/typings/index.d.ts",
