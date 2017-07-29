@@ -4,6 +4,24 @@
 
 This plugin is using the same [serialization module](https://www.npmjs.com/package/pretty-format) that is used in [Jest](http://facebook.github.io/jest/) library.
 
+## Snapshot Format
+
+Snapshots are stored in a [Markdown](https://en.wikipedia.org/wiki/Markdown) format to improve readability.
+
+````md
+## `Root Suite`
+
+##   `Sub Suite`
+
+####     `HTML Snapshot`
+
+```html
+<div>
+  <span />
+</div>
+```
+````
+
 ## Usage Example
 
 ```sh
@@ -23,7 +41,10 @@ module.exports = function (config) {
     browsers: ["ChromeHeadless"],
     frameworks: ["mocha", "snapshot", "mocha-snapshot"],
     reporters: ["mocha"],
-    preprocessors: { "__tests__/index.js": ["webpack", "sourcemap"] },
+    preprocessors: {
+      "**/__snapshot__/**/*.md": ["snapshot"],
+      "__tests__/index.js": ["webpack", "sourcemap"]
+    },
     files: ["__tests__/index.js"],
 
     colors: true,
