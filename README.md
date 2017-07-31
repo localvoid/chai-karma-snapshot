@@ -6,14 +6,19 @@ This plugin is using the same [serialization module](https://www.npmjs.com/packa
 
 ## Snapshot Format
 
-Snapshots are stored in a [Markdown](https://en.wikipedia.org/wiki/Markdown) format to improve readability.
+Snapshot can be stored in different formats. Right now there are two formats supported: `md` and `indented-md`.
+
+### Markdown Format
+
+This format is preferred when you specify language for code blocks in an assertion plugin. With this format, code
+editors will automatically highlight syntax of code blocks.
 
 ````md
-## `Root Suite`
+# `src/html.js`
 
-##   `Sub Suite`
+## `Sub Suite`
 
-####     `HTML Snapshot`
+####   `HTML Snapshot`
 
 ```html
 <div>
@@ -22,10 +27,26 @@ Snapshots are stored in a [Markdown](https://en.wikipedia.org/wiki/Markdown) for
 ```
 ````
 
+### Indented Markdown Format
+
+```md
+# `src/html.js`
+
+## `Sub Suite`
+
+####   `HTML Snapshot`
+
+    <div>
+      <span />
+    </div>
+```
+
 ## Snapshot File Path
 
 Snapshot file path is extracted from the name of the root suit cases and stored alongside with a tested files in a
 `__snapshots__` directory.
+
+Snapshot file path can be changed by providing a custom `pathResolver` in snapshot config.
 
 ## Usage Example
 
@@ -59,11 +80,7 @@ module.exports = function (config) {
     autoWatch: true,
 
     webpack: {
-      plugins: [
-        new webpack.SourceMapDevToolPlugin({
-          test: /\.js$/,
-        }),
-      ],
+      devtool: "inline-source-map",
       performance: {
         hints: false
       },
@@ -128,4 +145,35 @@ Update snapshots:
 
 ```sh
 $ UPDATE=1 karma start --single-run
+```
+
+## Config
+
+```js
+function resolve(basePath, suiteName) {
+  return path.join(basePath, "__snapshots__", suiteName);
+}
+
+config.set({
+  ...
+  snapshot: {
+    update: true,           // Run snapshot tests in UPDATE mode (default: false)
+    prune: true,            // Prune snapshots for removed tests (default: true)
+    format: "indented-md",  // Snapshot format (default: md)
+    checkSourceFile: true,  // Checks existince of the source file associated with tests (default: false)
+    pathResolver: resolve,  // Custom path resolver
+  }
+});
+```
+
+## Custom Snapshot Format
+
+Snapshot config option `format` also works with custom serialization formats. Custom snapshot serializer should have
+interface:
+
+```ts
+interface SnapshotSerializer {
+  serialize: (name: string, suite: SnapshotSuite) => string,
+  deserialize: (content: string) => { name: string, suite: SnapshotSuite },
+}
 ```
