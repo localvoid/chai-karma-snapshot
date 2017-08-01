@@ -1,6 +1,6 @@
 {
   "name": "chai-karma-snapshot",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "description": "Chai plugin for snapshot testing in Karma.",
@@ -25,8 +25,7 @@
   },
   "github": "https://github.com/localvoid/chai-karma-snapshot",
   "files": [
-    "dist",
-    "src",
+    "lib",
     "LICENSE",
     "README.md"
   ],
