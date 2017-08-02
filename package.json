@@ -30,6 +30,10 @@
     "README.md"
   ],
   "scripts": {},
+  "peerDependencies": {
+    "karma-snapshot": "^0.4.0",
+    "karma-mocha-snapshot": "^0.2.1"
+  },
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "pretty-format": "^20.0.3"
