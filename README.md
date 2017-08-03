@@ -68,7 +68,7 @@ module.exports = function (config) {
     frameworks: ["mocha", "snapshot", "mocha-snapshot"],
     reporters: ["mocha"],
     preprocessors: {
-      "**/__snapshot__/**/*.md": ["snapshot"],
+      "**/__snapshots__/**/*.md": ["snapshot"],
       "__tests__/index.js": ["webpack", "sourcemap"]
     },
     files: [
@@ -93,6 +93,7 @@ module.exports = function (config) {
 
     snapshot: {
       update: !!process.env.UPDATE,
+      prune: !!process.env.PRUNE,
     },
 
     mochaReporter: {
@@ -147,6 +148,12 @@ Update snapshots:
 $ UPDATE=1 karma start --single-run
 ```
 
+Prune snapshots:
+
+```sh
+$ PRUNE=1 karma start --single-run
+```
+
 ## Config
 
 ```js
@@ -158,7 +165,7 @@ config.set({
   ...
   snapshot: {
     update: true,           // Run snapshot tests in UPDATE mode (default: false)
-    prune: true,            // Prune snapshots for removed tests (default: true)
+    prune: false,            // Prune snapshots for removed tests (default: true)
     format: "indented-md",  // Snapshot format (default: md)
     checkSourceFile: true,  // Checks existince of the source file associated with tests (default: false)
     pathResolver: resolve,  // Custom path resolver
