@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "pretty-format": "^20.0.3"
+    "pretty-format": "^22.4.3"
   },
   "devDependencies": {}
 }
