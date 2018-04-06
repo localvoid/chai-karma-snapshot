@@ -1,6 +1,6 @@
 {
   "name": "chai-karma-snapshot",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "description": "Chai plugin for snapshot testing in Karma.",
@@ -31,12 +31,12 @@
   ],
   "scripts": {},
   "peerDependencies": {
-    "karma-snapshot": "^0.5.0",
+    "karma-snapshot": "^0.6.0",
     "karma-mocha-snapshot": "^0.2.1"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "pretty-format": "^20.0.3"
+    "pretty-format": "^22.4.3"
   },
   "devDependencies": {}
 }
